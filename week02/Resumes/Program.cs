@@ -13,7 +13,7 @@ class Program
 
         Job job2 = new Job();
         job2._jobTitle = "QA Engineer";
-        job2._company = "Microsoft";
+        job2._company = "Early Warning";
         job2._startYear = 2021;
         job2._endYear = 2022;
         Console.WriteLine(job2._company);
