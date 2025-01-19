@@ -14,6 +14,13 @@ public class Entry
         _entryText = entryText;
     }
 
+    public Entry(string date, string promptText, string entryText)
+    {
+        _date = date;
+        _promptText = promptText;
+        _entryText = entryText;
+    }
+
     public void Display()
     {
         Console.WriteLine($"{_date} - Prompt: {_promptText}");

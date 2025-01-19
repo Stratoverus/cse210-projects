@@ -12,7 +12,6 @@ class Program
     static void Main(string[] args)
     {
         Journal myJournal = new();
-        
 
         saved = false;
         Console.WriteLine("Welcome to the Journal Program.");
@@ -62,7 +61,6 @@ class Program
                         Console.WriteLine("Saving...");
                         myJournal.SaveToFile(file);
                         saved = true;
-
                     }
                     else if (answer == "n")
                     {

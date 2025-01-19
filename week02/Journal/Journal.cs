@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    public List<Entry> _entries = new();
     PromptGenerator prompt = new();
 
     public void AddEntry()
@@ -44,11 +44,8 @@ public class Journal
         {
             string[] parts = line.Split("|");
 
-            string firstLine = parts[0] + " " + parts[1];
-            string secondLine = parts[2];
-
-            _entries.Add(firstLine);
-            _entries.Add(secondLine);
+            Entry entry = new(parts[0], parts[1], parts[2]);
+            _entries.Add(entry);
         }
     }
 }
