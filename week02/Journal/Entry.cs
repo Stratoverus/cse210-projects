@@ -9,7 +9,6 @@ public class Entry
 
     public void Display()
     {
-        Console.WriteLine($"{_date}");
-        Console.WriteLine($"{_promptText}: {_entryText}");
+        Console.WriteLine($"{_date} - {_promptText}: {_entryText}");
     }
 }
