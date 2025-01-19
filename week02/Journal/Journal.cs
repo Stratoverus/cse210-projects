@@ -1,5 +1,5 @@
 using System;
-
+using System.IO;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -24,6 +24,10 @@ public class Journal
     public void SaveToFile(string file)
     {
 
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            
+        }
     }
 
     public void LoadFromFile(string file)

@@ -2,6 +2,7 @@
 //I went above and beyond by adding a saved flag. If you try to exit when you haven't saved, the program will prompt and ask if you have saved first.
 using System;
 using System.Formats.Asn1;
+using System.IO.Enumeration;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -10,6 +11,9 @@ class Program
     public static bool saved;
     static void Main(string[] args)
     {
+        Journal myJournal = new Journal();
+        Entry myEntry = new Entry();
+        
         string option;
         saved = false;
         Console.WriteLine("Welcome to the Journal Program.");
@@ -25,7 +29,7 @@ class Program
             option = Console.ReadLine();
             if (option == "1")
             {
-
+                
             }
             else if (option == "2")
             {
@@ -37,7 +41,10 @@ class Program
             }
             else if (option == "4")
             {
+                Console.Write("What is the file name? ");
+                string file = Console.ReadLine();
                 Console.WriteLine("Saving...");
+
                 saved = true;
             }
             else if (option == "5")
@@ -70,7 +77,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("That wasn't an option. Please try again.");
+                Console.WriteLine("That wasn't an option. Back to menu.");
                 option = "0";
             }
         }
