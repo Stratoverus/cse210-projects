@@ -57,7 +57,11 @@ class Program
                     string answer = Console.ReadLine();
                     if (answer == "y")
                     {
+                        Console.Write("What is the file name? ");
+                        string file = Console.ReadLine();
                         Console.WriteLine("Saving...");
+                        myJournal.SaveToFile(file);
+                        saved = true;
 
                     }
                     else if (answer == "n")

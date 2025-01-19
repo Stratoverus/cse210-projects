@@ -40,6 +40,15 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
+        string[] lines = System.IO. File.ReadAllLines(file);
 
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("|");
+
+            string firstLine = parts[0] + " " + parts[1];
+            string secondLine = parts[2];
+
+        }
     }
 }
