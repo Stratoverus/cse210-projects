@@ -53,7 +53,7 @@ class Program
             {
                 if (saved == false)
                 {
-                    Console.Write("You haven't saved to a file yet. All changes will be lost. Do you want to save to a file? (y/n)");
+                    Console.Write("You haven't saved to a file yet. All changes will be lost. Do you want to save to a file? (y/n) ");
                     string answer = Console.ReadLine();
                     if (answer == "y")
                     {
@@ -68,8 +68,8 @@ class Program
                     }
                     else
                     {
-                        Console.WriteLine("That wasn't a valid option. Saving anyways.");
-
+                        Console.WriteLine("That wasn't a valid option. Closing..");
+                        System.Threading.Thread.Sleep(3000);
                         System.Environment.Exit(1);
                     }
                 }

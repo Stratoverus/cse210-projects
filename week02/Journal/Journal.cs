@@ -28,10 +28,9 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-
         using (StreamWriter outputFile = new StreamWriter(file))
         {
-            
+            outputFile.Write(_entries);
         }
     }
 
