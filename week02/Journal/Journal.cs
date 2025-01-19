@@ -6,7 +6,10 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
 
+        
     }
 
     public void DisplayAll()
