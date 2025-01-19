@@ -3,12 +3,17 @@ using System.IO;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
+    PromptGenerator prompt = new();
 
-    public void AddEntry(Entry newEntry)
+    public void AddEntry()
     {
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
-        
+        string myPrompt = prompt.GetRandomPrompt();
+        Console.WriteLine($"{myPrompt}");
+        Console.Write("> ");
+        string response = Console.ReadLine();
+        myJournal.AddEntry(new Entry {Text = $"{}"});
 
     }
 

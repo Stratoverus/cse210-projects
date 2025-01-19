@@ -11,8 +11,8 @@ class Program
     public static bool saved;
     static void Main(string[] args)
     {
-        Journal myJournal = new Journal();
-        PromptGenerator prompt = new PromptGenerator();
+        Journal myJournal = new();
+        
 
         saved = false;
         Console.WriteLine("Welcome to the Journal Program.");
@@ -28,11 +28,7 @@ class Program
             string option = Console.ReadLine();
             if (option == "1")
             {
-                string myPrompt = prompt.GetRandomPrompt();
-                Console.WriteLine($"{myPrompt}");
-                Console.Write("> ");
-                string response = Console.ReadLine();
-                myJournal.AddEntry(new Entry {Text = $"{}"});
+                myJournal.AddEntry();
                 saved = false;
             }
             else if (option == "2")
