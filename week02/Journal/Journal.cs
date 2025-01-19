@@ -8,8 +8,6 @@ public class Journal
 
     public void AddEntry()
     {
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
         string myPrompt = prompt.GetRandomPrompt();
         Console.WriteLine(myPrompt);
         Console.Write("> ");
@@ -40,15 +38,17 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
-        string[] lines = System.IO. File.ReadAllLines(file);
+        String[] lines = System.IO.File.ReadAllLines(file);
 
-        foreach (string line in lines)
+        foreach (String line in lines)
         {
             string[] parts = line.Split("|");
 
             string firstLine = parts[0] + " " + parts[1];
             string secondLine = parts[2];
 
+            _entries.Add(firstLine);
+            _entries.Add(secondLine);
         }
     }
 }

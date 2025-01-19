@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
@@ -14,7 +13,7 @@ public class Entry
         _promptText = promptText;
         _entryText = entryText;
     }
-    
+
     public void Display()
     {
         Console.WriteLine($"{_date} - Prompt: {_promptText}");
