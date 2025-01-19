@@ -62,25 +62,21 @@ class Program
                     }
                     else if (answer == "n")
                     {
-                        Console.WriteLine("Alright, closing without saving in a few seconds.");
-                        System.Threading.Thread.Sleep(3000);
+                        Console.WriteLine("Alright, closing.");
                         System.Environment.Exit(1);
                     }
                     else
                     {
-                        Console.WriteLine("That wasn't a valid option. Closing..");
-                        System.Threading.Thread.Sleep(3000);
+                        Console.WriteLine("That wasn't a valid option. Closing.");
                         System.Environment.Exit(1);
                     }
                 }
-                Console.WriteLine("Alright, closing without saving in a few seconds.");
-                System.Threading.Thread.Sleep(3000);
+                Console.WriteLine("Alright, closing.");
                 System.Environment.Exit(1);
             }
             else
             {
                 Console.WriteLine("That wasn't an option. Back to menu.");
-                option = "0";
             }
         }
     }
