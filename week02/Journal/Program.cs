@@ -37,14 +37,16 @@ class Program
             }
             else if (option == "3")
             {
-
+                Console.WriteLine("What is the Filename");
+                string file = Console.ReadLine();
+                myJournal.LoadFromFile(file);
             }
             else if (option == "4")
             {
                 Console.Write("What is the file name? ");
                 string file = Console.ReadLine();
                 Console.WriteLine("Saving...");
-
+                myJournal.SaveToFile(file);
                 saved = true;
             }
             else if (option == "5")
