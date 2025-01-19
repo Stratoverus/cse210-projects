@@ -13,7 +13,7 @@ class Program
     {
         Journal myJournal = new Journal();
         Entry myEntry = new Entry();
-        
+
         string option;
         saved = false;
         Console.WriteLine("Welcome to the Journal Program.");
@@ -33,7 +33,7 @@ class Program
             }
             else if (option == "2")
             {
-
+                myJournal.DisplayAll();
             }
             else if (option == "3")
             {
