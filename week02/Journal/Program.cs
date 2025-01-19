@@ -12,28 +12,28 @@ class Program
     static void Main(string[] args)
     {
         Journal myJournal = new Journal();
-        Entry myEntry = new Entry();
         PromptGenerator prompt = new PromptGenerator();
 
-        string option;
         saved = false;
         Console.WriteLine("Welcome to the Journal Program.");
-        Console.WriteLine("Please select one of the following choices by typing the number:");
-        option = "0";
-        while (option != "5")
+        while (true)
         {
+            Console.WriteLine("Please select one of the following choices by typing the number:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
-            option = Console.ReadLine();
+            Console.Write("What would you like to do? ");
+            string option = Console.ReadLine();
             if (option == "1")
             {
                 string myPrompt = prompt.GetRandomPrompt();
                 Console.WriteLine($"{myPrompt}");
                 Console.Write("> ");
-                Console.ReadLine();
+                string response = Console.ReadLine();
+                myJournal.AddEntry(new Entry {Text = $"{}"});
+                saved = false;
             }
             else if (option == "2")
             {
