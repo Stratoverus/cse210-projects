@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.IO;
 public class Journal
 {
@@ -30,7 +31,10 @@ public class Journal
     {
         using (StreamWriter outputFile = new StreamWriter(file))
         {
-            outputFile.Write(_entries);
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine(entry);
+            }
         }
     }
 
