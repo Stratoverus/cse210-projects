@@ -13,6 +13,7 @@ class Program
     {
         Journal myJournal = new Journal();
         Entry myEntry = new Entry();
+        PromptGenerator prompt = new PromptGenerator();
 
         string option;
         saved = false;
@@ -30,6 +31,7 @@ class Program
             if (option == "1")
             {
                 
+                Console.WriteLine($"{prompt}");
             }
             else if (option == "2")
             {
