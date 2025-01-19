@@ -30,8 +30,10 @@ class Program
             option = Console.ReadLine();
             if (option == "1")
             {
-                
-                Console.WriteLine($"{prompt}");
+                string myPrompt = prompt.GetRandomPrompt();
+                Console.WriteLine($"{myPrompt}");
+                Console.Write("> ");
+                Console.ReadLine();
             }
             else if (option == "2")
             {
