@@ -9,12 +9,12 @@ public class Journal
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
 
-        
+
     }
 
     public void DisplayAll()
     {
-
+        
     }
 
     public void SaveToFile(string file)
