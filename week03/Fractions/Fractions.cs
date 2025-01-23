@@ -29,6 +29,7 @@ class Fractions
 
     public double GetDecimalValue()
     {
-        return 1;
+        double value = _top/_bottom;
+        return value;
     }
 }
