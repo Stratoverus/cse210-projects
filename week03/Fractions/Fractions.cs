@@ -21,5 +21,13 @@ class Fractions
         _bottom = bottom;
     }
 
-    
+    public string GetFractionString()
+    {
+        return "";
+    }
+
+    public double GetDecimalValue()
+    {
+        return 1;
+    }
 }
