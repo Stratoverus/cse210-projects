@@ -23,7 +23,8 @@ class Fractions
 
     public string GetFractionString()
     {
-        return "";
+        string value = $"{_top}/{_bottom}";
+        return value;
     }
 
     public double GetDecimalValue()
