@@ -16,5 +16,8 @@ class Program
         Console.WriteLine(fractions2.GetFractionString());
         Console.WriteLine(fractions2.GetDecimalValue());
 
+        Fractions fractions3 = new(1, 3);
+        Console.WriteLine(fractions3.GetFractionString());
+        Console.WriteLine(fractions3.GetDecimalValue());
     }
 }
