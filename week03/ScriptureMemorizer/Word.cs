@@ -10,12 +10,18 @@ class Word
 
     public void Hide()
     {
-
+        if (_isHidden == true)
+        {
+            _text = "_";
+        }
     }
 
     public void Show()
     {
-
+        if (_isHidden == false)
+        {
+            
+        }
     }
 
     public bool IsHidden()
