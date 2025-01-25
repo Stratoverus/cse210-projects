@@ -27,10 +27,7 @@ class Scripture
                 _words[index].Hide();
                 numberHidden++;
             }
-
         }
-            
-
     }
 
     public string GetDisplayText()
