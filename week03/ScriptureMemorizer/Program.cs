@@ -15,9 +15,8 @@ class Program
         int scriptureChapter = 10;
         int startingVerse = 4;
         int endingVerse = 5;
-        
-        Word myWord = new();
-        Reference myReference = new();
+
+        Reference myReference = new(scriptureBook, scriptureChapter, startingVerse, endingVerse);
         Scripture myScripture = new(myReference, scriptureText);
         Console.WriteLine("Please select your difficulty.");
         Console.WriteLine("Type either 1 for Easy, 2 for Normal, 3 for Hard, or 4 for expert. ");
