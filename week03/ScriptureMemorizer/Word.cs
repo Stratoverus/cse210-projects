@@ -6,39 +6,28 @@ class Word
     public Word(string text)
     {
         _text = text;
+        _isHidden = false;
     }
 
+//Making it simple now. I was doing too much before. It was redundant. No need to check if I'm already calling it.
     public void Hide()
     {
-        if (_isHidden == true)
-        {
-            _text = "_";
-        }
+        _isHidden = true;
     }
 
     public void Show()
     {
-        if (_isHidden == false)
-        {
-            
-        }
+        _isHidden = false;
     }
 
     public bool IsHidden()
     {
-        if (_text == "_")
-        {
-            _isHidden = true;
-        }
-        else
-        {
-            _isHidden = false;
-        }
         return _isHidden;
     }
 
+//I think this will work: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator Keeping this here for reference.
     public string GetDisplayText()
     {
-        return _text;
+        return _isHidden ? "_":_text;
     }
 }

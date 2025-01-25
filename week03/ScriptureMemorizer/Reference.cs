@@ -6,6 +6,7 @@ class Reference
     private string _book = "Moroni";
     private int _chapter = 10;
     private int _verse = 4;
+    //Set _endVerse to 0 when there isn't a range of verses.
     private int _endVerse = 5;
 
     public Reference(string book, int chapter, int verse)
@@ -13,7 +14,6 @@ class Reference
         _book = book;
         _chapter = chapter;
         _verse = verse;
-
     }
 
     public Reference(string book, int chapter, int startVerse, int endVerse)
@@ -24,8 +24,16 @@ class Reference
         _endVerse = endVerse;
     }
 
+//Need to figure out how to get this to use one constructor vs the other when there are multiple verses. I think a simple if else should be sufficient and checking if there's any value in endVerse
     public string GetDisplayText()
     {
-        return "";
+        if (_endVerse != 0)
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}";
+        }
     }
 }
