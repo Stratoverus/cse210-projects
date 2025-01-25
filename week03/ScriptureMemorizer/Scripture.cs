@@ -16,6 +16,14 @@ class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
+        Random rng = new();
+        int numberHidden = 0;
+        while (numberHidden < numberToHide)
+        {
+            int index = rng.Next(_words.Count);
+            
+        }
+            
 
     }
 
