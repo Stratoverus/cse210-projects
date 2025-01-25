@@ -6,7 +6,7 @@ class Scripture
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        foreach (Word _words in text)
+        foreach (Word i in _words)
         {
             
         }
