@@ -21,7 +21,13 @@ class Scripture
         while (numberHidden < numberToHide)
         {
             int index = rng.Next(_words.Count);
-            
+
+            if (!_words[index].IsHidden())
+            {
+                _words[index].Hide();
+                numberHidden++;
+            }
+
         }
             
 
