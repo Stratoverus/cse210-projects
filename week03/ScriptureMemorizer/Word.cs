@@ -5,7 +5,7 @@ class Word
 
     public Word(string text)
     {
-
+        _text = text;
     }
 
     public void Hide()
@@ -20,11 +20,19 @@ class Word
 
     public bool IsHidden()
     {
-        return true;
+        if (_text == "_")
+        {
+            _isHidden = true;
+        }
+        else
+        {
+            _isHidden = false;
+        }
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
-        return "";
+        return _text;
     }
 }
