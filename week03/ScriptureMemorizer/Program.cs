@@ -8,6 +8,9 @@ class Program
 { 
     static void Main(string[] args)
     {
+        Word myWord = new();
+        Reference myReference = new();
+        Scripture myScripture = new();
         Console.WriteLine("Please select your difficulty.");
         Console.WriteLine("Type either 1 for Easy, 2 for Normal, 3 for Hard, or 4 for expert. ");
         string choice = Console.ReadLine();
@@ -38,8 +41,11 @@ class Program
             difficulty = 3;
         }
         
+
         while (true) 
         {
+            Console.Clear();
+            myScripture.GetDisplayText();
 
         }
     }
