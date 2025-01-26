@@ -52,7 +52,7 @@ class Program
         while (myScripture.IsCompletelyHidden() == false) 
         {
             Console.Clear();
-            myScripture.GetDisplayText();
+            Console.WriteLine(myScripture.GetDisplayText());
             Console.ReadLine();
             myScripture.HideRandomWords(difficulty);            
         }
