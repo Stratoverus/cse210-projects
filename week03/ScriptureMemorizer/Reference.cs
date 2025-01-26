@@ -6,7 +6,6 @@ class Reference
     private string _book;
     private int _chapter;
     private int _verse;
-    //Set _endVerse to 0 when there isn't a range of verses.
     private int _endVerse;
 
     public Reference(string book, int chapter, int verse)
