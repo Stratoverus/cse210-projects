@@ -18,6 +18,18 @@ class Scripture
     {
         Random rng = new();
         int numberHidden = 0;
+        int availableIndex = 0;
+        foreach (Word i in _words)
+        {
+            if (i.IsHidden() == false)
+            {
+                availableIndex += 1;
+            }
+        }
+        if (availableIndex < numberToHide)
+        {
+            numberToHide = availableIndex;
+        }
         while (numberHidden < numberToHide)
         {
             int index = rng.Next(_words.Count);
