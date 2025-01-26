@@ -32,7 +32,7 @@ class Scripture
 //This page was helpful to learn to manipulate the strings: https://learn.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings
     public string GetDisplayText()
     {
-        string textToDisplay = _reference.GetDisplayText();
+        string textToDisplay = _reference.GetDisplayText() + " ";
         foreach (Word i in _words)
         {
             textToDisplay += i.GetDisplayText() + " ";
