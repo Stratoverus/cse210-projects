@@ -20,7 +20,7 @@ class Program
         Reference myReference = new(scriptureBook, scriptureChapter, startingVerse, endingVerse);
         Scripture myScripture = new(myReference, scriptureText);
         Console.WriteLine("Please select your difficulty.");
-        Console.WriteLine("Type either 1 for Easy, 2 for Normal, 3 for Hard, or 4 for expert. ");
+        Console.Write("Type either 1 for Easy, 2 for Normal, 3 for Hard, or 4 for expert. ");
         string choice = Console.ReadLine();
         int difficulty;
         //Easy difficulty
@@ -63,5 +63,11 @@ class Program
             }
             myScripture.HideRandomWords(difficulty);            
         }
+        //I think just display the blank scripture at this point and hold for user input. I think that's how I'll do it. I can't think of a way to have the class hold for one more time while all blank.
+        Console.Clear();
+        Console.WriteLine(myScripture.GetDisplayText());
+        Console.WriteLine();
+        Console.WriteLine("All blank. Press any key to quit.");
+        Console.ReadLine();
     }
 }
