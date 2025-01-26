@@ -13,7 +13,7 @@ class Scripture
             _words.Add(new Word(i));
         }
     }
-
+//need to fix infinite loop here if there are less words available
     public void HideRandomWords(int numberToHide)
     {
         Random rng = new();
@@ -40,6 +40,7 @@ class Scripture
         return textToDisplay;
     }
 
+//Trying to have it display all blank before closing.
     public bool IsCompletelyHidden()
     {
         foreach (Word i in _words)
