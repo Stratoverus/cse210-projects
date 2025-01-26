@@ -13,7 +13,7 @@ class Scripture
             _words.Add(new Word(i));
         }
     }
-//need to fix infinite loop here if there are less words available
+
     public void HideRandomWords(int numberToHide)
     {
         Random rng = new();

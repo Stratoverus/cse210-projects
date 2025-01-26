@@ -1,6 +1,7 @@
 //Scripture memorize Program
 //I went above and beyond by having there be a difficulty selector. AKA, Easy is 2 words hidden at a time, normal is 3, and hard is 4, with expert as 5.
 using System;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 
@@ -54,8 +55,12 @@ class Program
             Console.Clear();
             Console.WriteLine(myScripture.GetDisplayText());
             Console.WriteLine();
-            Console.WriteLine("Press Enter to continue or type 'quit' to finish: ");
-            Console.ReadLine();
+            Console.Write("Press Enter to continue or type 'quit' to finish: ");
+            string response = Console.ReadLine();
+            if (response == "quit")
+            {
+                break;
+            }
             myScripture.HideRandomWords(difficulty);            
         }
     }
