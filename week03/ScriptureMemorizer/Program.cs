@@ -49,7 +49,7 @@ class Program
         }
 
 
-        while (true) 
+        while (myScripture.IsCompletelyHidden() == false) 
         {
             Console.Clear();
             myScripture.GetDisplayText();
