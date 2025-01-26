@@ -53,6 +53,8 @@ class Program
         {
             Console.Clear();
             Console.WriteLine(myScripture.GetDisplayText());
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to continue or type 'quit' to finish: ");
             Console.ReadLine();
             myScripture.HideRandomWords(difficulty);            
         }
