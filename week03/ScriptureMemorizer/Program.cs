@@ -53,7 +53,8 @@ class Program
         {
             Console.Clear();
             myScripture.GetDisplayText();
-
+            Console.ReadLine();
+            myScripture.HideRandomWords(difficulty);            
         }
     }
 }
