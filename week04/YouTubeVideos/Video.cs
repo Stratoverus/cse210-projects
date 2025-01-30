@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 class Video
 {
     public string _title;
@@ -5,9 +6,9 @@ class Video
     public int _length;
     public List<Comment> _comments = new();
 
-    public int CountComments(Comment comment)
+    public int CountComments()
     {
-        return 0;
+        return _comments.Count;
     }
 
     public void Display()
