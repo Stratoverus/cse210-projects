@@ -20,5 +20,6 @@ class Video
         {
             i.Display();
         }
+        Console.WriteLine("");
     }
 }
