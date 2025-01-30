@@ -18,7 +18,7 @@ class Video
         Console.WriteLine($"Length(seconds): {_length}");
         foreach (Comment i in _comments)
         {
-            Console.WriteLine($"{i}");
+            i.Display();
         }
     }
 }
