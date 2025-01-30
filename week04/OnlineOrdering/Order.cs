@@ -10,7 +10,16 @@ class Order
 
     public int ShippingCost()
     {
-        return 0;
+        int cost;
+        if (Customer.LiveInUSA())
+        {
+            cost = 5;
+        }
+        else
+        {
+            cost = 35;
+        }
+        return cost;
     }
 
     public string ShowShippingLabel()
