@@ -1,9 +1,11 @@
+//Youtube program
 using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
+        Video myVideo = new();
+        
     }
 }

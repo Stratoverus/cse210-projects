@@ -13,6 +13,12 @@ class Video
 
     public void Display()
     {
-        
+        Console.WriteLine($"Title: {_title}");
+        Console.WriteLine($"Author: {_author}");
+        Console.WriteLine($"Length(seconds): {_length}");
+        foreach (Comment i in _comments)
+        {
+            Console.WriteLine($"{i}");
+        }
     }
 }
