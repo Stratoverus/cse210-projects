@@ -6,7 +6,8 @@ class Product
     private int _quantity;
     public Product(string name, int productId)
     {
-
+        _name = name;
+        _productId = productId;
     }
 
     public float TotalCost(int quantity, int productId)
