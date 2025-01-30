@@ -1,0 +1,21 @@
+class Product
+{
+    private string _name;
+    private int _productId;
+    private float _price;
+    private int _quantity;
+    public Product(string name, int productId)
+    {
+
+    }
+
+    public float TotalCost(int quantity, int productId)
+    {
+        return 0;
+    }
+
+    public void Display()
+    {
+        
+    }
+}
