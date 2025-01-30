@@ -10,9 +10,9 @@ class Product
         _productId = productId;
     }
 
-    public float TotalCost(int quantity, int productId)
+    public float TotalCost(int quantity, float price)
     {
-        return 0;
+        return quantity * price;
     }
 
     public void Display()
