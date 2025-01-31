@@ -10,6 +10,6 @@ class Customer
 
     public bool LiveInUsa()
     {
-        return Address.IsUSA();
+        return _address.IsUsa();
     }
 }

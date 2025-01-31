@@ -11,7 +11,7 @@ class Order
     public int ShippingCost()
     {
         int cost;
-        if (Customer.LiveInUSA())
+        if (customer.LiveInUsa())
         {
             cost = 5;
         }
