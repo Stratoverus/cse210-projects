@@ -1,17 +1,19 @@
 class Order
 {
     private List<Product> _products = new();
-    private Customer customer;
+    private Customer _customer;
+    private Product _product;
 
     public float TotalPrice()
     {
-        return 0;
+        float price = _product.TotalCost() + ShippingCost();
+        return price;
     }
 
     public int ShippingCost()
     {
         int cost;
-        if (customer.LiveInUsa())
+        if (_customer.LiveInUsa())
         {
             cost = 5;
         }
