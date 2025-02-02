@@ -4,6 +4,11 @@ class Order
     private Customer _customer;
     private Product _product;
 
+    public Order(Customer customer, List<Product> products)
+    {
+        _customer = customer;
+        _products = products;
+    }
     public double TotalPrice()
     {
         double price = _product.TotalCost() + ShippingCost();
