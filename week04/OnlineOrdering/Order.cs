@@ -2,7 +2,6 @@ class Order
 {
     private List<Product> _products = new();
     private Customer _customer;
-    private Product _product;
 
     public Order(Customer customer, List<Product> products)
     {
