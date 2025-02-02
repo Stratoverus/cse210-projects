@@ -28,6 +28,6 @@ class Address
 
     public string FullAddress()
     {
-        return $"{_street} {_city}, {_state} {_country}";
+        return $"{_street} \n{_city}, {_state} {_country}";
     }
 }
