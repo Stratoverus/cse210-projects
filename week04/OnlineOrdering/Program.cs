@@ -11,7 +11,7 @@ class Program
         List<Product> products1 = [myProduct1, myProduct2];
         Order myOrder1 = new(myCustomer1, products1);
 
-        Console.WriteLine($"{myOrder1.DisplayLabels}");
+        myOrder1.DisplayLabels();
 
         Address myAddress2 = new("2898 W. 820 N.", "Provo", "Utah", "UK");
         Customer myCustomer2 = new("British Keith", myAddress2);
@@ -20,6 +20,6 @@ class Program
         List<Product> products2 = [myProduct3, myProduct4];
         Order myOrder2 = new(myCustomer2, products2);
 
-        Console.WriteLine($"{myOrder2.DisplayLabels}");
+        myOrder2.DisplayLabels();
     }
 }

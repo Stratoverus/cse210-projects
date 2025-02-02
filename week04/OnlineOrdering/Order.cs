@@ -14,7 +14,7 @@ class Order
         double price = 0;
         foreach (Product product in _products)
         {
-            price += _product.TotalCost() + ShippingCost();
+            price += product.TotalCost() + ShippingCost();
         }
         return price;
     }
@@ -41,7 +41,7 @@ class Order
 
     public string ShowPackingLabel()
     {
-        string productLabel;
+        string productLabel = "";
         foreach (Product product in _products)
         {
             productLabel += $"{product}\n";
