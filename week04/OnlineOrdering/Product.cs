@@ -17,9 +17,8 @@ class Product
         return _quantity * _price;
     }
 
-//Might not need this with the requirements asking for a string.
-    public void Display()
+    public string ProductLine()
     {
-        
+        return $"Item: {_name}      ID: {_productId}";        
     }
 }

@@ -2,7 +2,6 @@ class Order
 {
     private List<Product> _products = new();
     private Customer _customer;
-    private Address _address;
 
     public Order(Customer customer, List<Product> products)
     {
@@ -36,8 +35,7 @@ class Order
 
     public string ShowShippingLabel()
     {
-        string label = $"Name:  {_customer.CustomerName} Address: {_address.FullAddress}";
-        return label;
+        return $"Name: {_customer.CustomerName()} \nAddress: testing";
     }
 
     public string ShowPackingLabel()
@@ -45,9 +43,9 @@ class Order
         string productLabel = "";
         foreach (Product product in _products)
         {
-            productLabel += $"{product}\n";
+            productLabel += $"{product.ProductLine()}\n";
         }
-        return $"Order List: {productLabel}";
+        return $"Order List: \n{productLabel}";
     }
 
     public void DisplayLabels()
@@ -58,7 +56,7 @@ class Order
         Console.WriteLine("");
         Console.WriteLine("Packing Label:");
         Console.WriteLine(ShowPackingLabel());
+        Console.WriteLine($"Total: {TotalPrice()}");
         Console.WriteLine("");
-        Console.WriteLine(TotalPrice());
     }
 }
