@@ -11,7 +11,11 @@ class Order
     }
     public double TotalPrice()
     {
-        double price = _product.TotalCost() + ShippingCost();
+        double price = 0;
+        foreach (Product product in _products)
+        {
+            price += _product.TotalCost() + ShippingCost();
+        }
         return price;
     }
 
@@ -31,17 +35,18 @@ class Order
 
     public string ShowShippingLabel()
     {
-        string label = $"Name:  ";
+        string label = $"Name:  {_customer}";
         return label;
     }
 
     public string ShowPackingLabel()
     {
+        string productLabel;
         foreach (Product product in _products)
         {
-            //string order = _product
+            productLabel += $"{product}\n";
         }
-        string label = $"Order List:  ";
+        string label = $"Order List: {productLabel}";
         return label;
     }
 
