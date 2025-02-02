@@ -2,6 +2,7 @@ class Order
 {
     private List<Product> _products = new();
     private Customer _customer;
+    private Address _address;
 
     public Order(Customer customer, List<Product> products)
     {
@@ -35,7 +36,7 @@ class Order
 
     public string ShowShippingLabel()
     {
-        string label = $"Name:  {_customer}";
+        string label = $"Name:  {_customer.CustomerName} Address: {_address.FullAddress}";
         return label;
     }
 
@@ -46,8 +47,7 @@ class Order
         {
             productLabel += $"{product}\n";
         }
-        string label = $"Order List: {productLabel}";
-        return label;
+        return $"Order List: {productLabel}";
     }
 
     public void DisplayLabels()

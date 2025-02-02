@@ -12,4 +12,10 @@ class Customer
     {
         return _address.IsUsa();
     }
+
+    //Instructions don't say to include this, but I can't figure out how to not include this without breaking encapsulation
+    public string CustomerName()
+    {
+        return $"{_name}";
+    }
 }
