@@ -45,7 +45,7 @@ class Order
         return label;
     }
 
-    public void DisplayLabel()
+    public void DisplayLabels()
     {
         Console.WriteLine("Thank you for your order, here is the shipping label and packing label.");
         Console.WriteLine("Shipping label:");
