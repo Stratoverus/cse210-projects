@@ -4,9 +4,9 @@ class Order
     private Customer _customer;
     private Product _product;
 
-    public float TotalPrice()
+    public double TotalPrice()
     {
-        float price = _product.TotalCost() + ShippingCost();
+        double price = _product.TotalCost() + ShippingCost();
         return price;
     }
 
@@ -26,11 +26,27 @@ class Order
 
     public string ShowShippingLabel()
     {
-        return "";
+        string label = $"Name:  ";
+        return label;
     }
 
     public string ShowPackingLabel()
     {
-        return "";
+        foreach (Product product in _products)
+        {
+            //string order = _product
+        }
+        string label = $"Order List:  ";
+        return label;
+    }
+
+    public void DisplayLabel()
+    {
+        Console.WriteLine("Thank you for your order, here is the shipping label and packing label.");
+        Console.WriteLine("Shipping label:");
+        Console.WriteLine(ShowShippingLabel());
+        Console.WriteLine("");
+        Console.WriteLine("Packing Label:");
+        Console.WriteLine(ShowPackingLabel());
     }
 }

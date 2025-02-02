@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
+        Order myOrder1 = new();
+        myOrder1._customer = new Customer("Keith Eberhard", new Address("1841 W. Expressman St.", "Apache Junction", "Arizona", "USA"));
+        myOrder1._products.Add(new Product("Laptop", 121, 1299.99, ));
+
+        Order myOrder2 = new();
+              
     }
 }
