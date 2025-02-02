@@ -35,7 +35,7 @@ class Order
 
     public string ShowShippingLabel()
     {
-        return $"Name: {_customer.CustomerName()} \nAddress: testing";
+        return $"Name: {_customer.CustomerName()} \nAddress: {_customer.GetFullAddress()}";
     }
 
     public string ShowPackingLabel()
