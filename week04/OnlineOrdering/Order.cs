@@ -14,8 +14,9 @@ class Order
         double price = 0;
         foreach (Product product in _products)
         {
-            price += product.TotalCost() + ShippingCost();
+            price += product.TotalCost();
         }
+        price += ShippingCost();
         return price;
     }
 
@@ -58,5 +59,7 @@ class Order
         Console.WriteLine("");
         Console.WriteLine("Packing Label:");
         Console.WriteLine(ShowPackingLabel());
+        Console.WriteLine("");
+        Console.WriteLine(TotalPrice());
     }
 }
