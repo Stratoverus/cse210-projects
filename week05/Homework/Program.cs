@@ -14,7 +14,7 @@ class Program
         Console.WriteLine(m2.GetHomeworkList());
 
         //Third assignment
-        WritingAssignment m3 = new("Keith Eberhard", "English 1010", "To kill a Mockingbird by somebody");
+        WritingAssignment m3 = new("Keith Eberhard", "English 1010", "To kill a Mockingbird Report");
         Console.WriteLine(m3.GetSummary());
         Console.WriteLine(m3.GetWritingInformation());
     }
