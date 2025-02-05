@@ -1,3 +1,5 @@
+//This is the mindfulness activity
+//I went above and beyond by....
 using System;
 
 class Program
