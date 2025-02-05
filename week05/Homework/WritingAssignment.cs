@@ -7,6 +7,6 @@ public class WritingAssignment : Assignment
     }
     public string GetWritingInformation()
     {
-
+        return $"{_title}";
     }
 }
