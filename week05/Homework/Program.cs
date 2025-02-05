@@ -15,6 +15,7 @@ class Program
 
         //Third assignment
         WritingAssignment m3 = new("Keith Eberhard", "English 1010", "To kill a Mockingbird by somebody");
-        
+        Console.WriteLine(m3.GetSummary());
+        Console.WriteLine(m3.GetWritingInformation());
     }
 }
