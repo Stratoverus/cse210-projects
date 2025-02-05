@@ -10,6 +10,6 @@ class Assignment
 
     public string GetSummary()
     {
-        
+        return $"{_studentName} - {_topic}";
     }
 }
