@@ -1,10 +1,8 @@
-using System.Net;
-
-class ReflectingActivity
+class ReflectingActivity : Activity
 {
     private List<string> _prompts;
     private List<string> _questions;
-    public ReflectingActivity()
+    public ReflectingActivity(string name, string description, int duration) : base(name, description, duration)
     {
 
     }
@@ -31,6 +29,6 @@ class ReflectingActivity
 
     public void DisplayQuestions()
     {
-        
+
     }
 }
