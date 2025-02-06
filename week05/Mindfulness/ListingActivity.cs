@@ -10,6 +10,13 @@ class ListingActivity : Activity
     public void Run()
     {
         DisplayStartingMessage();
+        GetRandomPrompt();
+        Console.WriteLine("Begin thinking about the prompt...");
+        ShowCountDown(5);
+        GetListFromUser();
+        _count = GetListFromUser().Count();
+        Console.WriteLine($"You typed {_count} entrie(s).");
+        DisplayEndingMessage();
     }
 
     public void GetRandomPrompt()
@@ -26,7 +33,7 @@ class ListingActivity : Activity
         List<string> inputs = new();
         while (duration >= 0)
         {
-            Console.WriteLine("Type your prompt.");
+            Console.WriteLine("Type your thoughts...");
             string input = Console.ReadLine();
             inputs.Add(input);
         }

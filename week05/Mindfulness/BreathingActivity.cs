@@ -21,5 +21,6 @@ class BreathingActivity : Activity
             Console.Clear();
             duration -= 6;
         }
+        DisplayEndingMessage();
     }
 }

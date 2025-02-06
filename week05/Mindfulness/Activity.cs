@@ -14,7 +14,7 @@ class Activity
         Console.WriteLine($"Welcome to {_name} activity.");
         Console.WriteLine($"{_description}");
         Console.Write("How many seconds for this activity? ");
-        //Issues with sanitizing input right now.
+        //I believe this is not a bad way to sanitize the input.
         string duration = Console.ReadLine();
         if (int.TryParse(duration, out int seconds))
         {
