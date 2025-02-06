@@ -23,14 +23,28 @@ class Activity
         Console.WriteLine("Please any key to exit.");
         Console.ReadLine();
     }
-
+//Might do a more fun animation here, we'll see what I have time for.
     public void ShowSpinner(int seconds)
     {
-        
+        while (seconds != 0)
+        {
+            Console.Write("+");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("-");
+            Thread.Sleep(500);
+            seconds -= 1;
+        }
     }
-
+//I think this should work? I guess we'll see when I test it.
     public void ShowCountDown(int seconds)
     {
-
+        while (seconds != 0)
+        {
+            Console.Write(seconds);
+            Thread.Sleep(1000);
+            seconds -= 1;
+            Console.Write("\b \b");
+        }
     }
 }
