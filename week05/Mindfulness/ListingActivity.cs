@@ -37,8 +37,11 @@ class ListingActivity : Activity
     public List<string> GetListFromUser()
     {
         int duration = GetDuration();
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(duration);
+        DateTime currentTime = DateTime.Now;
         List<string> inputs = new();
-        while (duration >= 0)
+        while (currentTime < futureTime)
         {
             Console.WriteLine("Type your thoughts...");
             string input = Console.ReadLine();
