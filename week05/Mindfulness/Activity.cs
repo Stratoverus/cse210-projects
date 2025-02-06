@@ -3,11 +3,10 @@ class Activity
     private string _name;
     private string _description;
     private int _duration;
-    public Activity(string name, string description, int duration)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
     }
 
     public void DisplayStartingMessage()
@@ -15,6 +14,8 @@ class Activity
         Console.WriteLine($"Welcome to {_name} activity. {_description}");
         Console.Write("How many seconds for this activity? ");
         _duration = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Press any key when you're ready to start.");
+        Console.ReadLine();
     }
 
     public void DisplayEndingMessage()
@@ -46,5 +47,10 @@ class Activity
             seconds -= 1;
             Console.Write("\b \b");
         }
+    }
+
+    public int GetDuration()
+    {
+        return _duration;
     }
 }

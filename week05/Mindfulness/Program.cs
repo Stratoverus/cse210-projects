@@ -7,7 +7,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         Console.WriteLine("Welcome to this relaxing program.");
         bool valid = false;
         while (!valid)
@@ -22,6 +21,7 @@ class Program
             if (answer == 1)
             {
                 //Breathing Activity
+                BreathingActivity activity = new("", "");
                 valid = true;
             }
             else if (answer == 2)

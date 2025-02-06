@@ -1,6 +1,6 @@
 class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string description, int duration) : base(name, description, duration)
+    public BreathingActivity(string name, string description) : base(name, description)
     {
 
     }
@@ -8,6 +8,18 @@ class BreathingActivity : Activity
     public void Run()
     {
         DisplayStartingMessage();
-        
+        int duration = GetDuration();
+        while (duration >= 0)
+        {
+            Console.WriteLine("Breathe in....");
+            Console.WriteLine("");
+            ShowCountDown(3);
+            Console.Clear();
+            Console.WriteLine("Breathe out....");
+            Console.WriteLine("");
+            ShowCountDown(3);
+            Console.Clear();
+            duration -= 6;
+        }
     }
 }
