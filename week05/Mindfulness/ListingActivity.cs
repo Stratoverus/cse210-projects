@@ -15,7 +15,7 @@ class ListingActivity : Activity
         ShowCountDown(5);
         GetListFromUser();
         _count = GetListFromUser().Count();
-        Console.WriteLine($"You typed {_count} entrie(s).");
+        Console.WriteLine($"You typed {_count} line(s).");
         DisplayEndingMessage();
     }
 
