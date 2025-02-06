@@ -28,14 +28,16 @@ class ReflectingActivity : Activity
     {
         DisplayStartingMessage();
         int duration = GetDuration();
-        while (duration >= 0)
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(duration);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < futureTime)
         {
             Console.Clear();
             DisplayPrompt();
             Console.WriteLine("Reflect on the following question for ten seconds, afterwards, another will appear.");
             DisplayQuestions();
             ShowSpinner(10);
-            duration -= 10;
         }
         DisplayEndingMessage();
     }

@@ -9,7 +9,10 @@ class BreathingActivity : Activity
     {
         DisplayStartingMessage();
         int duration = GetDuration();
-        while (duration >= 0)
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(duration);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < futureTime)
         {
             Console.WriteLine("Breathe in....");
             Console.WriteLine("");
@@ -19,7 +22,6 @@ class BreathingActivity : Activity
             Console.WriteLine("");
             ShowCountDown(5);
             Console.Clear();
-            duration -= 10;
         }
         DisplayEndingMessage();
     }
