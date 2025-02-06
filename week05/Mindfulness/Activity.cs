@@ -32,6 +32,7 @@ class Activity
 
     public void DisplayEndingMessage()
     {
+        Console.Clear();
         Console.WriteLine("This was a good exercise right? Hope you're feeling better!");
         Console.WriteLine("Please any key to exit.");
         Console.ReadLine();
