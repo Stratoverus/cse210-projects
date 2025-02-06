@@ -19,7 +19,7 @@ class BreathingActivity : Activity
             Console.WriteLine("");
             ShowCountDown(5);
             Console.Clear();
-            duration -= 6;
+            duration -= 10;
         }
         DisplayEndingMessage();
     }

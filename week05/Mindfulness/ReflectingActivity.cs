@@ -35,6 +35,7 @@ class ReflectingActivity : Activity
             Console.WriteLine("Reflect on the following question for ten seconds, afterwards, another will appear.");
             DisplayQuestions();
             ShowSpinner(10);
+            duration -= 10;
         }
         DisplayEndingMessage();
     }
