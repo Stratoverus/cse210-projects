@@ -17,8 +17,8 @@ class Program
             Console.WriteLine("3. Reflecting Activity");
             Console.Write("Type the number corresponding to the activity: ");
             //Gonna try this here. https://stackoverflow.com/questions/24443827/reading-an-integer-from-user-input
-            int answer = Convert.ToInt32(Console.ReadLine());
-            if (answer == 1)
+            string answer = Console.ReadLine();
+            if (answer == "1")
             {
                 //Breathing Activity
                 Console.Clear();
@@ -26,7 +26,7 @@ class Program
                 activity.Run();
                 valid = true;
             }
-            else if (answer == 2)
+            else if (answer == "2")
             {
                 //Listing Activity
                 Console.Clear();
@@ -34,7 +34,7 @@ class Program
                 activity.Run();
                 valid = true;
             }
-            else if (answer == 3)
+            else if (answer == "3")
             {
                 //Reflecting Activity
                 Console.Clear();

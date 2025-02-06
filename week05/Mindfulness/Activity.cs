@@ -11,10 +11,20 @@ class Activity
 
     public void DisplayStartingMessage()
     {
-        Console.WriteLine($"Welcome to {_name} activity. {_description}");
+        Console.WriteLine($"Welcome to {_name} activity.");
+        Console.WriteLine($" {_description}");
         Console.Write("How many seconds for this activity? ");
         //Issues with sanitizing input right now.
-        _duration = Convert.ToInt32(Console.ReadLine());
+        string duration = Console.ReadLine();
+        if (int.TryParse(duration, out int seconds))
+        {
+            _duration = seconds;
+        }
+        else
+        {
+            Console.WriteLine("Not a valid input. Defaulting to 60 seconds.");
+            _duration = 60;
+        }
         Console.WriteLine("Press any key when you're ready to start.");
         Console.ReadLine();
         Console.Clear();
