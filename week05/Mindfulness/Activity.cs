@@ -12,7 +12,7 @@ class Activity
 
     public void DisplayStartingMessage()
     {
-
+        Console.WriteLine($"Welcome ");
     }
 
     public void DisplayEndingMessage()
