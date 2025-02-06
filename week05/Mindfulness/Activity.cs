@@ -12,7 +12,7 @@ class Activity
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to {_name} activity.");
-        Console.WriteLine($" {_description}");
+        Console.WriteLine($"{_description}");
         Console.Write("How many seconds for this activity? ");
         //Issues with sanitizing input right now.
         string duration = Console.ReadLine();
