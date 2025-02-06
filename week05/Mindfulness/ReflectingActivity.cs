@@ -10,16 +10,24 @@ class ReflectingActivity : Activity
     public void Run()
     {
         DisplayStartingMessage();
+
+        DisplayEndingMessage();
     }
 
     public string GetRandomPrompt()
     {
-        return "";
+        Random rng = new Random();
+        int index = rng.Next(_prompts.Count);
+        string prompt = _prompts[index];
+        return prompt;
     }
 
     public string GetRandomQuestion()
     {
-        return "";
+        Random rng = new Random();
+        int index = rng.Next(_questions.Count);
+        string question = _questions[index];
+        return question;
     }
 
     public void DisplayPrompt()
