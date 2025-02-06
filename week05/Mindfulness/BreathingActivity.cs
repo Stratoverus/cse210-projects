@@ -13,11 +13,11 @@ class BreathingActivity : Activity
         {
             Console.WriteLine("Breathe in....");
             Console.WriteLine("");
-            ShowCountDown(3);
+            ShowCountDown(5);
             Console.Clear();
             Console.WriteLine("Breathe out....");
             Console.WriteLine("");
-            ShowCountDown(3);
+            ShowCountDown(5);
             Console.Clear();
             duration -= 6;
         }

@@ -13,9 +13,11 @@ class Activity
     {
         Console.WriteLine($"Welcome to {_name} activity. {_description}");
         Console.Write("How many seconds for this activity? ");
+        //Issues with sanitizing input right now.
         _duration = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Press any key when you're ready to start.");
         Console.ReadLine();
+        Console.Clear();
     }
 
     public void DisplayEndingMessage()
