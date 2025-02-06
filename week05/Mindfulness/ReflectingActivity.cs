@@ -9,7 +9,7 @@ class ReflectingActivity : Activity
 
     public void Run()
     {
-
+        DisplayStartingMessage();
     }
 
     public string GetRandomPrompt()
