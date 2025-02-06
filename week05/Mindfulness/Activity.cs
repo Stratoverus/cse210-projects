@@ -12,12 +12,16 @@ class Activity
 
     public void DisplayStartingMessage()
     {
-        Console.WriteLine($"Welcome ");
+        Console.WriteLine($"Welcome to {_name} activity. {_description}");
+        Console.Write("How many seconds for this activity? ");
+        _duration = Convert.ToInt32(Console.ReadLine());
     }
 
     public void DisplayEndingMessage()
     {
-
+        Console.WriteLine("This was a good exercise right? Hope you're feeling better!");
+        Console.WriteLine("Please any key to exit.");
+        Console.ReadLine();
     }
 
     public void ShowSpinner(int seconds)
