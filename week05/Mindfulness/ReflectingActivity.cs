@@ -7,7 +7,7 @@ class ReflectingActivity : Activity
 
     }
 
-    public void run()
+    public void Run()
     {
 
     }
