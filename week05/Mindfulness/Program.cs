@@ -46,7 +46,7 @@ class Program
             else
             {
                 Console.Clear();
-                Console.WriteLine("Not a valid answer. Press any key to try again.");
+                Console.WriteLine("Not a valid answer. Press enter to try again.");
                 Console.ReadLine();
             }
         }

@@ -25,7 +25,7 @@ class Activity
             Console.WriteLine("Not a valid input. Defaulting to 60 seconds.");
             _duration = 60;
         }
-        Console.WriteLine("Press any key when you're ready to start.");
+        Console.WriteLine("Press enter when you're ready to start.");
         Console.ReadLine();
         Console.Clear();
     }
@@ -34,7 +34,7 @@ class Activity
     {
         Console.Clear();
         Console.WriteLine("This was a good exercise right? Hope you're feeling better!");
-        Console.WriteLine("Please any key to exit.");
+        Console.WriteLine("Please enter to exit.");
         Console.ReadLine();
     }
 //Might do a more fun animation here, we'll see what I have time for.
@@ -46,8 +46,9 @@ class Activity
             Thread.Sleep(500);
             Console.Write("\b \b");
             Console.Write("-");
-            Console.Write("\b \b");
             Thread.Sleep(500);
+            Console.Write("\b \b");
+            
             seconds -= 1;
         }
     }
