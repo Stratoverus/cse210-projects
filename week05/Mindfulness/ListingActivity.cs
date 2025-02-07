@@ -45,10 +45,10 @@ class ListingActivity : Activity
         while (DateTime.Now < futureTime)
         {
             //more debug
-            Console.WriteLine(startTime);
-            Console.WriteLine(futureTime);
-            Console.WriteLine(DateTime.Now);
-            Console.WriteLine("Type your thoughts...");
+            //Console.WriteLine(startTime);
+            //Console.WriteLine(futureTime);
+            //Console.WriteLine(DateTime.Now);
+            //Console.WriteLine("Type your thoughts...");
             string input = Console.ReadLine();
             if (DateTime.Now > futureTime)
             {
@@ -57,7 +57,7 @@ class ListingActivity : Activity
             }
             inputs.Add(input);
             //debug line
-            Console.WriteLine($"Time left: {futureTime - DateTime.Now}. You typed: {inputs.Count} lines.");
+            //Console.WriteLine($"Time left: {futureTime - DateTime.Now}. You typed: {inputs.Count} lines.");
         }
         return inputs;
     }
