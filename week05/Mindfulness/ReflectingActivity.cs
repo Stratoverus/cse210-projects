@@ -30,14 +30,12 @@ class ReflectingActivity : Activity
         int duration = GetDuration();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
-        DateTime currentTime = DateTime.Now;
-        while (currentTime < futureTime)
+        Console.WriteLine("Reflect on the following question for ten seconds, afterwards, another will appear.");
+        while (DateTime.Now < futureTime)
         {
-            Console.Clear();
-            DisplayPrompt();
-            Console.WriteLine("Reflect on the following question for ten seconds, afterwards, another will appear.");
             DisplayQuestions();
             ShowSpinner(10);
+            Console.WriteLine("Now think about the next question...");
         }
         DisplayEndingMessage();
     }

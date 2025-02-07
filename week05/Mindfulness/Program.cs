@@ -7,6 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Clear();
         Console.WriteLine("Welcome to this relaxing program.");
         bool valid = false;
         while (!valid)

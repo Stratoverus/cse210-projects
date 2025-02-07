@@ -23,6 +23,8 @@ class ListingActivity : Activity
         GetListFromUser();
         _count = GetListFromUser().Count();
         Console.WriteLine($"You typed {_count} line(s).");
+        Console.WriteLine("Press any key to move on...");
+        Console.ReadLine();
         DisplayEndingMessage();
     }
 
@@ -39,9 +41,8 @@ class ListingActivity : Activity
         int duration = GetDuration();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
-        DateTime currentTime = DateTime.Now;
         List<string> inputs = new();
-        while (currentTime < futureTime)
+        while (DateTime.Now < futureTime)
         {
             Console.WriteLine("Type your thoughts...");
             string input = Console.ReadLine();
