@@ -46,6 +46,7 @@ class Activity
             Thread.Sleep(500);
             Console.Write("\b \b");
             Console.Write("-");
+            Console.Write("\b \b");
             Thread.Sleep(500);
             seconds -= 1;
         }
