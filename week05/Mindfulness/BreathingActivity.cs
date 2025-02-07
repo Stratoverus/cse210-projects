@@ -15,11 +15,11 @@ class BreathingActivity : Activity
         {
             Console.WriteLine("Breathe in....");
             Console.WriteLine("");
-            ShowCountDown(5);
+            ShowCountDown(4);
             Console.Clear();
             Console.WriteLine("Breathe out....");
             Console.WriteLine("");
-            ShowCountDown(5);
+            ShowCountDown(4);
             Console.Clear();
         }
         ShowSummary();
