@@ -22,6 +22,7 @@ class BreathingActivity : Activity
             ShowCountDown(5);
             Console.Clear();
         }
+        ShowSummary();
         DisplayEndingMessage();
     }
 }

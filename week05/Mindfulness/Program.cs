@@ -1,5 +1,5 @@
 //This is the mindfulness activity
-//I went above and beyond by....
+//I went above and beyond by adding a new method that described their session and what they did.
 using System;
 using System.Formats.Asn1;
 

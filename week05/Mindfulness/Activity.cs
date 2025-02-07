@@ -32,7 +32,6 @@ class Activity
 
     public void DisplayEndingMessage()
     {
-        Console.Clear();
         Console.WriteLine("This was a good exercise right? Hope you're feeling better!");
         Console.WriteLine("Please enter to exit.");
         Console.ReadLine();
@@ -67,5 +66,15 @@ class Activity
     public int GetDuration()
     {
         return _duration;
+    }
+
+    public void ShowSummary()
+    {
+        Console.Clear();
+        Console.WriteLine("Activity Summary:");
+        Console.WriteLine($"You completed the {_name} activity.");
+        Console.WriteLine($"You did this in {_duration} seconds.");
+        int longer = _duration * 2;
+        Console.WriteLine($"Maybe next time you can do it for {longer} seconds?");
     }
 }

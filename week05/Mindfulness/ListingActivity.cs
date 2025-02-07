@@ -25,6 +25,7 @@ class ListingActivity : Activity
         Console.WriteLine($"You typed {_count} line(s).");
         Console.WriteLine("Press any key to move on...");
         Console.ReadLine();
+        ShowSummary();
         DisplayEndingMessage();
     }
 

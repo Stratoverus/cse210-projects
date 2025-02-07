@@ -38,6 +38,7 @@ class ReflectingActivity : Activity
             ShowSpinner(10);
             Console.WriteLine("Now think about the next question...");
         }
+        ShowSummary();
         DisplayEndingMessage();
     }
 
