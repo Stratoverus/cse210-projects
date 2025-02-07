@@ -20,7 +20,6 @@ class ListingActivity : Activity
         GetRandomPrompt();
         Console.WriteLine("Begin thinking about the prompt...");
         ShowCountDown(5);
-        GetListFromUser();
         _count = GetListFromUser().Count();
         Console.WriteLine($"You typed {_count} line(s).");
         Console.WriteLine("Press any key to move on...");
@@ -45,9 +44,20 @@ class ListingActivity : Activity
         List<string> inputs = new();
         while (DateTime.Now < futureTime)
         {
+            //more debug
+            Console.WriteLine(startTime);
+            Console.WriteLine(futureTime);
+            Console.WriteLine(DateTime.Now);
             Console.WriteLine("Type your thoughts...");
             string input = Console.ReadLine();
+            if (DateTime.Now > futureTime)
+            {
+                Console.WriteLine("You have ran out of time.");
+                break;
+            }
             inputs.Add(input);
+            //debug line
+            Console.WriteLine($"Time left: {futureTime - DateTime.Now}. You typed: {inputs.Count} lines.");
         }
         return inputs;
     }
