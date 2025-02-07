@@ -27,6 +27,7 @@ class ReflectingActivity : Activity
     public void Run()
     {
         DisplayStartingMessage();
+        DisplayPrompt();
         int duration = GetDuration();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
