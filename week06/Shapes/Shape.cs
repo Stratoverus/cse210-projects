@@ -16,7 +16,7 @@ class Shape
         _color = color;
     }
 
-    public double GetArea()
+    public virtual double GetArea()
     {
         return 0;
     }
