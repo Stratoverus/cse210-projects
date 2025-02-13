@@ -14,9 +14,15 @@ class Program
 
         Circle s3 = new(4, "purple");
         shapes.Add(s3);
-            
-        Console.WriteLine($"The color is {s1.Getcolor()} and the area is {s1.GetArea()}.");
 
+        
 
+        foreach (Shape i in shapes)
+        {
+            double area = i.GetArea();
+            string color = i.Getcolor();
+
+            Console.WriteLine($"The color is {color} and the area is {area}.");
+        }
     }
 }
