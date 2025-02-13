@@ -81,16 +81,20 @@ class GoalManager
             {
                 case "1":
                     //Simple Goal
+                    
                     break;
                 case "2":
                     //Eternal Goal
+
                     break;
                 case "3":
                     //Checklist goal
+
                     break;
                 default:
                     Console.WriteLine("That is not a valid answer, try again.");
                     Thread.Sleep(2000);
+                    Console.Clear();
                     CreateGoal();
                     break;
             }
