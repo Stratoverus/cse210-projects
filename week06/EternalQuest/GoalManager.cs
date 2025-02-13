@@ -110,6 +110,12 @@ class GoalManager
             string amount = Console.ReadLine();
             Console.WriteLine("What is the bonus point value? ");
             string bonus = Console.ReadLine();
+            _goals.Add(name, description, points, amount, bonus);
+        }
+        else
+        {
+            _goals.Add(name, description, points);
+
         }
         
     }
