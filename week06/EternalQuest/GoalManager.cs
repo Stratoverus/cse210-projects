@@ -72,7 +72,12 @@ class GoalManager
 
     public void ListGoalDetails()
     {
-
+        if (_goals.Count == 0)
+        {
+            Console.WriteLine("No goals added yet, please add some...");
+            Start();
+        }
+        
     }
 
     public void CreateGoal()
@@ -166,6 +171,7 @@ class GoalManager
                 index -= 1;
                 if (index >= 0 && index < _goals.Count)
                 {
+
                     inputValid = true;
                 }
                 else

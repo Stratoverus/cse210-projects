@@ -21,11 +21,11 @@ class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return base.GetDetailsString();
+        return $"{base.GetDetailsString()} -- Currently completed: {_amountCompleted}/{_target}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal|{base.GetStringRepresentation}|{_bonus}|{_target}|{_amountCompleted}";
+        return $"ChecklistGoal|{base.GetStringRepresentation()}|{_bonus}|{_target}|{_amountCompleted}";
     }
 }

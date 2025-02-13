@@ -27,7 +27,12 @@ class Goal
 
     public virtual string GetDetailsString()
     {
-        return "";
+        string complete = " ";
+        if (IsComplete())
+        {
+            complete = "X";
+        }
+        return $"[{complete}] {_shortName} ({_description})";
     }
 
     public virtual string GetStringRepresentation()
