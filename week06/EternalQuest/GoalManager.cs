@@ -21,7 +21,7 @@ class GoalManager
             Console.WriteLine("  4. Load Goals");
             Console.WriteLine("  5. Record Event");
             Console.WriteLine("  6. Quit");
-            Console.WriteLine("What is your selection? ");
+            Console.Write("What is your selection? ");
             string answer = Console.ReadLine();
 
             switch (answer)
@@ -74,7 +74,7 @@ class GoalManager
         Console.WriteLine("  1. Simple Goal");
         Console.WriteLine("  2. Eternal goal");
         Console.WriteLine("  3. Checklist Goal");
-        Console.WriteLine("Which goal type do you want to create? ");
+        Console.Write("Which goal type do you want to create? ");
         string type = Console.ReadLine();
             //As of right now, I'm just using this to check if it's a valid answer. Might do more with this later.
             switch (type)
