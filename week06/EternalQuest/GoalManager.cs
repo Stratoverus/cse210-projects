@@ -30,7 +30,7 @@ class GoalManager
                     CreateGoal();
                     break;
                 case "2":
-                    ListGoalNames();
+                    ListGoalDetails();
                     break;
                 case "3":
                     SaveGoals();
@@ -61,7 +61,13 @@ class GoalManager
 
     public void ListGoalNames()
     {
-        
+        int i = 1;
+        Console.WriteLine("The Goals are:");
+        foreach (Goal goal in _goals)
+        {
+            Console.WriteLine($"{i}. {goal.GetName()}");
+            i++;
+        }
     }
 
     public void ListGoalDetails()
@@ -148,13 +154,38 @@ class GoalManager
 
     public void RecordEvent()
     {
+        ListGoalNames();
+        bool inputValid = false;
+        int index;
+        while (!inputValid)
+        {
+            Console.Write("Which goal did you accomplish? ");
+            string answer = Console.ReadLine();
+            if (int.TryParse(answer, out index))
+            {
+                index -= 1;
+                if (index >= 0 && index < _goals.Count)
+                {
+                    inputValid = true;
+                }
+                else
+                {
+                    Console.WriteLine($"Invalid option! Please type a number from 1 to {_goals.Count}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid option!");
+            }
+        }
+        
 
     }
 
     public void SaveGoals()
     {
-        //Make sure to name this properly in the future with asking what they want to save it as.
-        string file = "";
+        Console.Write("What would you like to save the file as? ");
+        string file = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(file))
         {
             foreach (Goal goal in _goals)
@@ -166,8 +197,8 @@ class GoalManager
 
     public void LoadGoals()
     {
-        //Make sure to get this from the user later.
-        string file = "";
+        Console.Write("What is the name of the file you wish to load from? ");
+        string file = Console.ReadLine();
         //Just getting in barebones for now.
         String[] lines = System.IO.File.ReadAllLines(file);
 

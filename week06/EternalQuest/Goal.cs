@@ -10,6 +10,11 @@ class Goal
         _points = points;
     }
 
+    public string GetName()
+    {
+        return _shortName;
+    }
+
     public virtual void RecordEvent()
     {
 
