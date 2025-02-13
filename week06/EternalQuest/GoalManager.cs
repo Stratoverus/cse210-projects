@@ -75,9 +75,9 @@ class GoalManager
         Console.WriteLine("  2. Eternal goal");
         Console.WriteLine("  3. Checklist Goal");
         Console.WriteLine("Which goal type do you want to create? ");
-        string answer = Console.ReadLine();
+        string type = Console.ReadLine();
 
-            switch (answer)
+            switch (type)
             {
                 case "1":
                     //Simple Goal
@@ -98,6 +98,20 @@ class GoalManager
                     CreateGoal();
                     break;
             }
+        Console.Write("What is the name of the goal? ");
+        string name = Console.ReadLine();
+        Console.Write("What is a short description of this goal? ");
+        string description = Console.ReadLine();
+        Console.Write("What is the amount of points associated with this goal? ");
+        string points = Console.ReadLine();
+        if (type == "3")
+        {
+            Console.WriteLine("How many times does this goal need to be accomplished for bonus points? ");
+            string amount = Console.ReadLine();
+            Console.WriteLine("What is the bonus point value? ");
+            string bonus = Console.ReadLine();
+        }
+        
     }
 
     public void RecordEvent()
