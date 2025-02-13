@@ -9,10 +9,21 @@ class ChecklistGoal : Goal
         _bonus = bonus;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
+        if (IsComplete())
+        {
+            Console.WriteLine("You have already completed this. You need to record a different goal.");
+            return 0;
+        }
         _amountCompleted++;
-        
+        int pointsScored = base.RecordEvent();
+        if (IsComplete())
+        {
+            Console.WriteLine($"Your goal was completed. You have earned {_bonus} bonus points.");
+            pointsScored += _bonus;
+        }
+        return pointsScored;
     }
 
     public override bool IsComplete()

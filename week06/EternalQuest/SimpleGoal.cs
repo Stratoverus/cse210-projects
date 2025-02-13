@@ -6,9 +6,16 @@ class SimpleGoal : Goal
 
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
+        if (_isComplete)
+        {
+            Console.WriteLine("You have already completed this. You need to record a different goal.");
+            return 0;
+        }
        _isComplete = true;
+       int pointsScored = base.RecordEvent();
+       return pointsScored;
     }
 
     public override bool IsComplete()

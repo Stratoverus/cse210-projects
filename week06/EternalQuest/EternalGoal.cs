@@ -5,9 +5,10 @@ class EternalGoal : Goal
 
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        base.RecordEvent();
+        int pointsScored = base.RecordEvent();
+        return pointsScored;
     }
 
     public override bool IsComplete()

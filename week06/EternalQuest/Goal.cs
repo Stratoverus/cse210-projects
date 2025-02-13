@@ -15,10 +15,11 @@ class Goal
         return _shortName;
     }
 
-    public virtual void RecordEvent()
+    public virtual int RecordEvent()
     {
         Console.WriteLine($"You have completed {_shortName}.");
         Console.WriteLine($"You have earned {_points} points.");
+        return int.Parse(_points);
     }
 
     public virtual bool IsComplete()
