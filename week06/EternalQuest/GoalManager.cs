@@ -70,7 +70,30 @@ class GoalManager
 
     public void CreateGoal()
     {
+        Console.WriteLine("The type of goals are as follows: ");
+        Console.WriteLine("  1. Simple Goal");
+        Console.WriteLine("  2. Eternal goal");
+        Console.WriteLine("  3. Checklist Goal");
+        Console.WriteLine("Which goal type do you want to create? ");
+        string answer = Console.ReadLine();
 
+            switch (answer)
+            {
+                case "1":
+                    //Simple Goal
+                    break;
+                case "2":
+                    //Eternal Goal
+                    break;
+                case "3":
+                    //Checklist goal
+                    break;
+                default:
+                    Console.WriteLine("That is not a valid answer, try again.");
+                    Thread.Sleep(2000);
+                    CreateGoal();
+                    break;
+            }
     }
 
     public void RecordEvent()

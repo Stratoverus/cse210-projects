@@ -1,5 +1,5 @@
 //Here is the Eternal Quest program/game
-//I went above and beyond by doing....
+//I went above and beyond by doing switch statements
 using System;
 
 class Program
