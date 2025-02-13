@@ -6,6 +6,6 @@ class Program
     {
         Square s1 = new(3, "Blue");
 
-        Console.WriteLine(s1);
+        Console.WriteLine($"The color is {s1.Getcolor()} and the area is {s1.GetArea()}.");
     }
 }
