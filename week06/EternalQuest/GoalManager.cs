@@ -50,7 +50,6 @@ class GoalManager
                     Start();
                     break;
             }   
-
         }
     }
 
