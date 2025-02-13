@@ -8,17 +8,16 @@ class SimpleGoal : Goal
 
     public override void RecordEvent()
     {
-        base.RecordEvent();
+       _isComplete = true;
     }
 
     public override bool IsComplete()
     {
-
         return _isComplete;
     }
 
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{}|{IsComplete()}";
+        return $"SimpleGoal|{base.GetStringRepresentation()}|{IsComplete()}";
     }
 }
