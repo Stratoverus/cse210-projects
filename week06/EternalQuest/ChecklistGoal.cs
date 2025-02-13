@@ -9,6 +9,14 @@ class ChecklistGoal : Goal
         _bonus = bonus;
     }
 
+    //Couldn't figure out how to import the saved amount completed, so just going to overload the constructor
+    public ChecklistGoal(string name, string description, string points, int target, int bonus, int amountCompleted) : base(name, description, points)
+    {
+        _target = target;
+        _bonus = bonus;
+        _amountCompleted = amountCompleted;
+    }
+
     public override int RecordEvent()
     {
         if (IsComplete())

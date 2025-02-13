@@ -20,7 +20,8 @@ class GoalManager
             Console.WriteLine("  3. Save Goals");
             Console.WriteLine("  4. Load Goals");
             Console.WriteLine("  5. Record Event");
-            Console.WriteLine("  6. Quit");
+            Console.WriteLine("  6. Clear Terminal");
+            Console.WriteLine("  7. Quit");
             Console.Write("What is your selection? ");
             string answer = Console.ReadLine();
 
@@ -42,6 +43,9 @@ class GoalManager
                     RecordEvent();
                     break;
                 case "6":
+                    Console.Clear();
+                    break;
+                case "7":
                     Environment.Exit(0);
                     break;
                 default:
@@ -186,6 +190,7 @@ class GoalManager
         {
             Console.Write("Which goal did you accomplish? ");
             string answer = Console.ReadLine();
+            Console.WriteLine();
             if (int.TryParse(answer, out index))
             {
                 index -= 1;
@@ -194,7 +199,7 @@ class GoalManager
                     //Do something more here.....
                     int addPoints = _goals[index].RecordEvent();
                     _score += addPoints;
-                    Console.WriteLine($"You now have {_score} points.");
+                    Console.WriteLine();
                     inputValid = true;
                 }
                 else
@@ -218,24 +223,57 @@ class GoalManager
             outputFile.WriteLine(_score);
             foreach (Goal goal in _goals)
             {
-                outputFile.WriteLine($"{goal.GetStringRepresentation}");
+                outputFile.WriteLine($"{goal.GetStringRepresentation()}");
             }
         }
+        Console.WriteLine($"Your file has been saved as {file}.");
     }
 
     public void LoadGoals()
     {
-        Console.Write("What is the name of the file you wish to load from? ");
+        Console.WriteLine("NOTE: This will delete any goals that you have currently and load from this file.");
+        Console.Write("What is the name of the file you wish to load from?");
         string file = Console.ReadLine();
+        if (!File.Exists(file))
+        {
+            Console.WriteLine("That file was not found. Please try again.");
+            LoadGoals();
+            return;
+        }
         //Just getting in barebones for now.
         String[] lines = System.IO.File.ReadAllLines(file);
-
-        foreach (String line in lines)
+        _goals.Clear();
+        _score = int.Parse(lines[0]);
+        //foreach won't work here because we're skipping the first line. Need to look into a for loop.
+        //foreach (String line in lines)
+        //{
+        //    string[] parts = line.Split("|");
+        //    Goal goal = new(parts[0], parts[2], parts[3]);
+        //    _goals.Add(goal);
+        //}
+        for (int i = 0; i < lines.Length; i++)
         {
-            string[] parts = line.Split("|");
-
-            Goal goal = new(parts[0], parts[2], parts[3]);
-            _goals.Add(goal);
+            string[] parts = lines[i].Split("|");
+            Goal goal = null;
+            switch (parts[0])
+            {
+                case "SimpleGoal":
+                    goal = new(parts[1], parts[2], parts[3]);
+                    if (bool.Parse(parts[4]))
+                    {
+                        //not sure how to save the bool from here... researching ways.
+                    }
+                    break;
+                case "EternalGoal":
+                    goal = new(parts[1], parts[2], parts[3]);
+                    break;
+                case "ChecklistGoal":
+                    ChecklistGoal g2 = new(parts[1], parts[2], parts[3], int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]));
+                    break;
+                default:
+                    Console.WriteLine($"Error importing {parts[0]}");
+                    continue;
+            }
         }
     }
 }
