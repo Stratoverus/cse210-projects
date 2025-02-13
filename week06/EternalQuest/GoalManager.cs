@@ -11,7 +11,7 @@ class GoalManager
     {
         while (true)
         {
-            Console.Clear();
+            //Console.Clear();
             DisplayPlayerInfo();
             Console.WriteLine();
             Console.WriteLine("Please pick from one of the following options:");
@@ -77,7 +77,12 @@ class GoalManager
             Console.WriteLine("No goals added yet, please add some...");
             Start();
         }
-        
+        foreach (Goal goal in _goals)
+        {
+            int i = 1;
+            Console.WriteLine($"{i}. {goal.GetDetailsString()}");
+            i+=1;
+        }
     }
 
     public void CreateGoal()
@@ -118,10 +123,10 @@ class GoalManager
         string points = Console.ReadLine();
         if (type == "3")
         {
-            Console.WriteLine("How many times does this goal need to be accomplished for bonus points? ");
+            Console.Write("How many times does this goal need to be accomplished for bonus points? ");
             string amountString = Console.ReadLine();
             int amount = ConvertInt(amountString);
-            Console.WriteLine("What is the bonus point value? ");
+            Console.Write("What is the bonus point value? ");
             string bonusString = Console.ReadLine();
             int bonus = ConvertInt(bonusString);
             ChecklistGoal g = new(name, description, points, amount, bonus);

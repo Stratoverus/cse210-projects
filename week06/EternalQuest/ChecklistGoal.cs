@@ -16,7 +16,13 @@ class ChecklistGoal : Goal
 
     public override bool IsComplete()
     {
-        return base.IsComplete();
+        bool completed = false;
+        if (_amountCompleted >= _target)
+        {
+            completed = true;
+            return completed;
+        }
+        return completed;
     }
 
     public override string GetDetailsString()

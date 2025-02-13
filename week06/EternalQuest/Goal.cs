@@ -22,7 +22,7 @@ class Goal
 
     public virtual bool IsComplete()
     {
-        return true;
+        return false;
     }
 
     public virtual string GetDetailsString()
