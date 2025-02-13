@@ -149,6 +149,7 @@ class GoalManager
             CreateGoal();
         }
         Start();
+        return;
     }
 
     public int ConvertInt(string number)
@@ -177,6 +178,7 @@ class GoalManager
             Console.WriteLine("There are no goals to record events for...");
             Thread.Sleep(2000);
             Start();
+            return;
         }
         bool inputValid = false;
         int index;
@@ -190,8 +192,8 @@ class GoalManager
                 if (index >= 0 && index < _goals.Count)
                 {
                     //Do something more here.....
-                    //int addPoints = _goals[index].RecordEvent();
-                    //_score += addPoints;
+                    int addPoints = _goals[index].RecordEvent();
+                    _score += addPoints;
                     Console.WriteLine($"You now have {_score} points.");
                     inputValid = true;
                 }
