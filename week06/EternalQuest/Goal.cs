@@ -17,7 +17,8 @@ class Goal
 
     public virtual void RecordEvent()
     {
-
+        Console.WriteLine($"You have completed {_shortName}.");
+        Console.WriteLine($"You have earned {_points} points.");
     }
 
     public virtual bool IsComplete()

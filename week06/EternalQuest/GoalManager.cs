@@ -55,7 +55,7 @@ class GoalManager
 
     public void DisplayPlayerInfo()
     {
-        //Need to calculate this better in the future using a foreach
+        //Might need to calculate this better in the future? We'll see.
         Console.WriteLine($"You have {_score} points.");
     }
 
@@ -142,6 +142,12 @@ class GoalManager
             SimpleGoal g = new(name, description, points);
             _goals.Add(g);
         }
+        else
+        {
+            Console.WriteLine("Not a valid input...");
+            Thread.Sleep(2000);
+            CreateGoal();
+        }
         Start();
     }
 
@@ -165,6 +171,13 @@ class GoalManager
     public void RecordEvent()
     {
         ListGoalNames();
+
+        if (_goals.Count == 0)
+        {
+            Console.WriteLine("There are no goals to record events for...");
+            Thread.Sleep(2000);
+            Start();
+        }
         bool inputValid = false;
         int index;
         while (!inputValid)
@@ -176,7 +189,10 @@ class GoalManager
                 index -= 1;
                 if (index >= 0 && index < _goals.Count)
                 {
-
+                    //Do something more here.....
+                    //int addPoints = _goals[index].RecordEvent();
+                    //_score += addPoints;
+                    Console.WriteLine($"You now have {_score} points.");
                     inputValid = true;
                 }
                 else
@@ -189,8 +205,6 @@ class GoalManager
                 Console.WriteLine("Invalid option!");
             }
         }
-        
-
     }
 
     public void SaveGoals()
@@ -199,6 +213,7 @@ class GoalManager
         string file = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(file))
         {
+            outputFile.WriteLine(_score);
             foreach (Goal goal in _goals)
             {
                 outputFile.WriteLine($"{goal.GetStringRepresentation}");

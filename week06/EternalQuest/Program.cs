@@ -7,6 +7,8 @@ class Program
     static void Main(string[] args)
     {
         GoalManager goal = new();
+        Console.Clear();
+        Console.WriteLine("Welcome to your goal tracking program.");
         goal.Start();
     }
 }
