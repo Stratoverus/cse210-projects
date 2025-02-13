@@ -76,7 +76,7 @@ class GoalManager
         Console.WriteLine("  3. Checklist Goal");
         Console.WriteLine("Which goal type do you want to create? ");
         string type = Console.ReadLine();
-
+            //As of right now, I'm just using this to check if it's a valid answer. Might do more with this later.
             switch (type)
             {
                 case "1":
@@ -107,9 +107,11 @@ class GoalManager
         if (type == "3")
         {
             Console.WriteLine("How many times does this goal need to be accomplished for bonus points? ");
-            string amount = Console.ReadLine();
+            string amountString = Console.ReadLine();
+            int amount = ConvertInt(amountString);
             Console.WriteLine("What is the bonus point value? ");
-            string bonus = Console.ReadLine();
+            string bonusString = Console.ReadLine();
+            int bonus = ConvertInt(bonusString);
             ChecklistGoal g = new(name, description, points, amount, bonus);
             _goals.Add(g);
         }
@@ -124,6 +126,23 @@ class GoalManager
             _goals.Add(g);
         }
         Start();
+    }
+
+    public int ConvertInt(string number)
+    {
+        int converted = 0;
+        if (int.TryParse(number, out int convert))
+        {
+            converted = convert;
+            return converted;
+        }
+        else
+        {
+            Console.WriteLine("Not a valid input...");
+            Thread.Sleep(2000);
+            CreateGoal();
+        }
+        return converted;
     }
 
     public void RecordEvent()
