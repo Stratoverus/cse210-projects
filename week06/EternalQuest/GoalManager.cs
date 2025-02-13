@@ -1,7 +1,7 @@
 class GoalManager
 {
-    private List<Goal> _goals;
-    private int _score;
+    private List<Goal> _goals = new List<Goal> {};
+    private int _score = 0;
     public GoalManager()
     {
 
