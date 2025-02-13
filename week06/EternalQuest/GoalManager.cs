@@ -152,11 +152,30 @@ class GoalManager
 
     public void SaveGoals()
     {
-
+        //Make sure to name this properly in the future with asking what they want to save it as.
+        string file = "";
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            foreach (Goal goal in _goals)
+            {
+                outputFile.WriteLine($"{goal.GetStringRepresentation}");
+            }
+        }
     }
 
     public void LoadGoals()
     {
+        //Make sure to get this from the user later.
+        string file = "";
+        //Just getting in barebones for now.
+        String[] lines = System.IO.File.ReadAllLines(file);
 
+        foreach (String line in lines)
+        {
+            string[] parts = line.Split("|");
+
+            Goal goal = new(parts[0], parts[2], parts[3]);
+            _goals.Add(goal);
+        }
     }
 }
