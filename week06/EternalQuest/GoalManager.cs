@@ -1,6 +1,6 @@
 class GoalManager
 {
-    private List<Goal> _goals = new List<Goal> {};
+    private List<Goal> _goals = new();
     private int _score = 0;
     public GoalManager()
     {
@@ -110,14 +110,20 @@ class GoalManager
             string amount = Console.ReadLine();
             Console.WriteLine("What is the bonus point value? ");
             string bonus = Console.ReadLine();
-            _goals.Add(name, description, points, amount, bonus);
+            ChecklistGoal g = new(name, description, points, amount, bonus);
+            _goals.Add(g);
         }
-        else
+        else if (type == "2")
         {
-            _goals.Add(name, description, points);
-
+            EternalGoal g = new(name, description, points);
+            _goals.Add(g);
         }
-        
+        else if (type == "1")
+        {
+            SimpleGoal g = new(name, description, points);
+            _goals.Add(g);
+        }
+        Start();
     }
 
     public void RecordEvent()
