@@ -13,11 +13,12 @@ class SimpleGoal : Goal
 
     public override bool IsComplete()
     {
-        return base.IsComplete();
+
+        return _isComplete;
     }
 
     public override string GetStringRepresentation()
     {
-        return base.GetStringRepresentation();
+        return $"SimpleGoal:{}|{IsComplete()}";
     }
 }

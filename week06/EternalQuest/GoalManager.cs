@@ -55,12 +55,13 @@ class GoalManager
 
     public void DisplayPlayerInfo()
     {
+        //Need to calculate this better in the future using a foreach
         Console.WriteLine($"You have {_score} points.");
     }
 
     public void ListGoalNames()
     {
-
+        
     }
 
     public void ListGoalDetails()
