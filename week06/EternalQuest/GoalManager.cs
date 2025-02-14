@@ -64,6 +64,7 @@ class GoalManager
 
     public void ListGoalNames()
     {
+        Console.WriteLine();
         int i = 1;
         Console.WriteLine("The Goals are:");
         foreach (Goal goal in _goals)
@@ -75,21 +76,24 @@ class GoalManager
 
     public void ListGoalDetails()
     {
+        Console.WriteLine();
+        Console.WriteLine("Here are your goals.");
         if (_goals.Count == 0)
         {
             Console.WriteLine("No goals added yet, please add some...");
             Start();
         }
+        int i = 1;
         foreach (Goal goal in _goals)
         {
-            int i = 1;
             Console.WriteLine($"{i}. {goal.GetDetailsString()}");
-            i+=1;
+            i++;
         }
     }
 
     public void CreateGoal()
     {
+        Console.WriteLine();
         Console.WriteLine("The type of goals are as follows: ");
         Console.WriteLine("  1. Simple Goal");
         Console.WriteLine("  2. Eternal goal");
@@ -174,6 +178,7 @@ class GoalManager
 
     public void RecordEvent()
     {
+        Console.WriteLine();
         ListGoalNames();
 
         if (_goals.Count == 0)
@@ -214,6 +219,7 @@ class GoalManager
 
     public void SaveGoals()
     {
+        Console.WriteLine();
         Console.Write("What would you like to save the file as? ");
         string file = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(file))
@@ -229,8 +235,9 @@ class GoalManager
 
     public void LoadGoals()
     {
+        Console.WriteLine();
         Console.WriteLine("NOTE: This will delete any goals that you have currently and load from this file.");
-        Console.Write("What is the name of the file you wish to load from?");
+        Console.Write("What is the name of the file you wish to load from? ");
         string file = Console.ReadLine();
         if (!File.Exists(file))
         {
@@ -249,7 +256,7 @@ class GoalManager
         //    Goal goal = new(parts[0], parts[2], parts[3]);
         //    _goals.Add(goal);
         //}
-        for (int i = 0; i < lines.Length; i++)
+        for (int i = 1; i < lines.Length; i++)
         {
             string[] parts = lines[i].Split("|");
             Goal goal;

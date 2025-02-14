@@ -1,0 +1,4 @@
+225
+SimpleGoal|reading|read a book|50|True
+ChecklistGoal|Attend Temple|attend the temple 3 times|50|5|300|2
+EternalGoal|Attend church|Attend church weekly|75
