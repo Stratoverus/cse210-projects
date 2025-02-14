@@ -17,6 +17,11 @@ class SimpleGoal : Goal
        int pointsScored = base.RecordEvent();
        return pointsScored;
     }
+    //For loading from the file
+    public void markComplete(bool isComplete)
+    {
+        _isComplete = isComplete;
+    }
 
     public override bool IsComplete()
     {

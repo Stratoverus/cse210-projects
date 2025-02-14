@@ -254,7 +254,7 @@ class GoalManager
         for (int i = 0; i < lines.Length; i++)
         {
             string[] parts = lines[i].Split("|");
-            Goal goal = null;
+            Goal goal;
             switch (parts[0])
             {
                 case "SimpleGoal":
@@ -262,18 +262,22 @@ class GoalManager
                     if (bool.Parse(parts[4]))
                     {
                         //not sure how to save the bool from here... researching ways.
+                        //Researched and found out about "down-casting" Seems good: https://www.csharp.com/article/polymorphism-up-casting-and-down-casting/
+                        ((SimpleGoal)goal).markComplete(true);
                     }
                     break;
                 case "EternalGoal":
-                    goal = new(parts[1], parts[2], parts[3]);
+                    goal = new EternalGoal(parts[1], parts[2], parts[3]);
                     break;
                 case "ChecklistGoal":
-                    ChecklistGoal g2 = new(parts[1], parts[2], parts[3], int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]));
+                    goal = new ChecklistGoal(parts[1], parts[2], parts[3], int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]));
                     break;
                 default:
+                    //I think I'll just add some error handling in here just in case as default.
                     Console.WriteLine($"Error importing {parts[0]}");
                     continue;
             }
+            _goals.Add(goal);
         }
     }
 }
