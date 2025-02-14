@@ -59,7 +59,6 @@ class GoalManager
 
     public void DisplayPlayerInfo()
     {
-        //Might need to calculate this better in the future? We'll see.
         Console.WriteLine($"You have {_score} points.");
     }
 
@@ -196,7 +195,6 @@ class GoalManager
                 index -= 1;
                 if (index >= 0 && index < _goals.Count)
                 {
-                    //Do something more here.....
                     int addPoints = _goals[index].RecordEvent();
                     _score += addPoints;
                     Console.WriteLine();
