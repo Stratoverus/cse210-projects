@@ -2,6 +2,7 @@ class GoalManager
 {
     private List<Goal> _goals = new();
     private int _score = 0;
+    private bool saved = false;
     public GoalManager()
     {
 
@@ -46,6 +47,7 @@ class GoalManager
                     Console.Clear();
                     break;
                 case "7":
+                    CheckSaved();
                     Environment.Exit(0);
                     break;
                 default:
@@ -60,6 +62,30 @@ class GoalManager
     public void DisplayPlayerInfo()
     {
         Console.WriteLine($"You have {_score} points.");
+    }
+
+    public void CheckSaved()
+    {
+        if (!saved)
+        {
+            Console.Write("You haven't saved yet. Do you want to save? (y/n) ");
+            string answer = Console.ReadLine();
+            if (answer == "y")
+            {
+                SaveGoals();
+                return;
+            }
+            else if (answer == "n")
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Invalid answer, returning to main menu.");
+                Start();
+                return;
+            }
+        }
     }
 
     public void ListGoalNames()
@@ -117,9 +143,7 @@ class GoalManager
                     break;
                 default:
                     Console.WriteLine("That is not a valid answer, try again.");
-                    Thread.Sleep(2000);
-                    Console.Clear();
-                    CreateGoal();
+                    Start();
                     break;
             }
         Console.Write("What is the name of the goal? ");
@@ -156,6 +180,7 @@ class GoalManager
             CreateGoal();
         }
         Start();
+        saved = false;
         return;
     }
 
@@ -231,6 +256,7 @@ class GoalManager
             }
         }
         Console.WriteLine($"Your file has been saved as {file}.");
+        saved = true;
     }
 
     public void LoadGoals()
