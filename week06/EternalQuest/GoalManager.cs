@@ -240,6 +240,7 @@ class GoalManager
                 Console.WriteLine("Invalid option!");
             }
         }
+        saved = false;
     }
 
     public void SaveGoals()
@@ -310,5 +311,6 @@ class GoalManager
             }
             _goals.Add(goal);
         }
+        saved = true;
     }
 }
