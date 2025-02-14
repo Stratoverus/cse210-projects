@@ -258,7 +258,7 @@ class GoalManager
             switch (parts[0])
             {
                 case "SimpleGoal":
-                    goal = new(parts[1], parts[2], parts[3]);
+                    goal = new SimpleGoal(parts[1], parts[2], parts[3]);
                     if (bool.Parse(parts[4]))
                     {
                         //not sure how to save the bool from here... researching ways.
