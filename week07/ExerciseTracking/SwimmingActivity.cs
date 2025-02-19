@@ -8,16 +8,21 @@ class SwimmingActivity : Activity
 
     public override string GetDistance()
     {
-        return "";
+        double distance = _laps * 50 / 1000;
+        return $"{distance} km";
     }
 
     public override string GetSpeed()
     {
-        return "";
+        double hours = _minutes / 60;
+        double speed = _laps * 50 / 1000 / hours;
+        return $"{speed} kph";
     }
 
     public override string GetPace()
     {
-        return "";
+        double distance = _laps * 50 / 1000;
+        double pace = _minutes / distance;
+        return $"{pace} min per km";
     }
 }
