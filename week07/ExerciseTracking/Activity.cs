@@ -1,10 +1,10 @@
 class Activity
 {
-    protected int _minutes;
+    protected double _minutes;
     private string _date;
     private string _activityName;
 
-    public Activity(string date, int minutes, string activityName)
+    public Activity(string date, double minutes, string activityName)
     {
         _date = date;
         _minutes = minutes;
