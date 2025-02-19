@@ -1,8 +1,12 @@
 class Activity
 {
-    public Activity()
-    {
+    int _minutes;
+    string _date;
 
+    public Activity( string date, int minutes)
+    {
+        _date = date;
+        _minutes = minutes;
     }
 
     public virtual double GetDistance()
@@ -22,6 +26,6 @@ class Activity
 
     public void GetSummary()
     {
-        
+
     }
 }
