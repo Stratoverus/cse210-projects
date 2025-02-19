@@ -4,7 +4,7 @@ class Activity
     private string _date;
     private string _activityName;
 
-    public Activity( string date, int minutes, string activityName)
+    public Activity(string date, int minutes, string activityName)
     {
         _date = date;
         _minutes = minutes;
@@ -24,6 +24,11 @@ class Activity
     public virtual string GetPace()
     {
         return "";
+    }
+
+    public double ConvertToHour()
+    {
+        return _minutes / 60;
     }
 
     public void GetSummary()

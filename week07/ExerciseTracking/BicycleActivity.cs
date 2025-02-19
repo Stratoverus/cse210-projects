@@ -13,7 +13,7 @@ class BicycleActivity : Activity
 
     public override string GetSpeed()
     {
-        return "";
+        return $"{_speed} mph";
     }
 
     public override string GetPace()
