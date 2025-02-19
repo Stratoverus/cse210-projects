@@ -1,31 +1,33 @@
 class Activity
 {
-    int _minutes;
-    string _date;
+    private int _minutes;
+    private string _date;
+    private string _activityName;
 
-    public Activity( string date, int minutes)
+    public Activity( string date, int minutes, string activityName)
     {
         _date = date;
         _minutes = minutes;
+        _activityName = activityName;
     }
 
-    public virtual double GetDistance()
+    public virtual string GetDistance()
     {
-        return 0;
+        return "";
     }
 
-    public virtual double GetSpeed()
+    public virtual string GetSpeed()
     {
-        return 0;
+        return "";
     }
 
-    public virtual double GetPace()
+    public virtual string GetPace()
     {
-        return 0;
+        return "";
     }
 
     public void GetSummary()
     {
-
+        Console.WriteLine($"{_date} {_activityName} ({_minutes} min)- Distance {GetDistance()}, Speed {GetSpeed()}, Pace: {GetPace()}");
     }
 }

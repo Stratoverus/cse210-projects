@@ -1,23 +1,23 @@
 class RunningActivity : Activity
 {
-    double _distance;
-    public RunningActivity(string date, int minutes, double distance) : base (date, minutes)
+    private double _distance;
+    public RunningActivity(string date, int minutes, string activityName, double distance) : base (date, minutes, activityName)
     {
 
     }
 
-    public override double GetDistance()
+    public override string GetDistance()
     {
-        return 0;
+        return "";
     }
 
-    public override double GetSpeed()
+    public override string GetSpeed()
     {
-        return 0;
+        return "";
     }
 
-    public override double GetPace()
+    public override string GetPace()
     {
-        return 0;
+        return "";
     }
 }
