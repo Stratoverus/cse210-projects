@@ -8,7 +8,9 @@ class BicycleActivity : Activity
 
     public override string GetDistance()
     {
-        return "";
+        double hours = _minutes / 60;
+        double distance = _speed * hours;
+        return $"{distance} mile(s)";
     }
 
     public override string GetSpeed()
@@ -18,6 +20,9 @@ class BicycleActivity : Activity
 
     public override string GetPace()
     {
-        return "";    
+        double hours = _minutes / 60;
+        double distance = _speed * hours;
+        double pace = _minutes / distance;
+        return $"{pace} minutes per mile";    
     }
 }

@@ -1,6 +1,6 @@
 class Activity
 {
-    private int _minutes;
+    protected int _minutes;
     private string _date;
     private string _activityName;
 
@@ -24,11 +24,6 @@ class Activity
     public virtual string GetPace()
     {
         return "";
-    }
-
-    public double ConvertToHour()
-    {
-        return _minutes / 60;
     }
 
     public void GetSummary()

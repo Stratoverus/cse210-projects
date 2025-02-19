@@ -1,5 +1,3 @@
-using System.Xml;
-
 class RunningActivity : Activity
 {
     private double _distance;
@@ -15,13 +13,14 @@ class RunningActivity : Activity
 
     public override string GetSpeed()
     {
-        double hours =  ConvertToHour();
+        double hours =  _minutes / 60;
         double speed = _distance / hours;
         return $"{speed} mph";
     }
 
     public override string GetPace()
     {
-        return "";
+        double pace = _minutes / _distance;
+        return $"{pace} minutes per mile";
     }
 }
